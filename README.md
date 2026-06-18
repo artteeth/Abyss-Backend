@@ -1,6 +1,6 @@
 # AI Companion Chat API
 
-基于 FastAPI + OpenRouter + Supabase 的 AI 后端。
+基于 FastAPI + OpenRouter + Supabase 的清冷 AI 伴侣后端。
 
 ## 文件结构
 
