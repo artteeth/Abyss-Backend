@@ -41,7 +41,7 @@ def db() -> Client:
 
 # ── Pydantic Schemas ──────────────────────────────────────────────────────────
 class ChatRequest(BaseModel):
-    session_id: int
+    session_id: str="default"
     message: str
 
 class ChatResponse(BaseModel):
