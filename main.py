@@ -22,6 +22,9 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 MODEL_ID           = os.getenv("MODEL_ID", "openai/gpt-4o-mini")
 SUPABASE_URL       = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY       = os.getenv("SUPABASE_KEY", "")
+supabase = None
+if supabase_url and supabase_key:
+    supabase = create_client(supabase_url, supabase_key)
 
 openai_client = AsyncOpenAI(
     api_key=OPENROUTER_API_KEY,
