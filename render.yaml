@@ -10,7 +10,7 @@ services:
       - key: OPENROUTER_API_KEY
         sync: false
       - key: MODEL_ID
-        value: openai/gpt-4o-mini
+        value: openai/gpt-4o
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_KEY
