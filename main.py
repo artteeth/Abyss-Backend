@@ -251,10 +251,14 @@ def create_session(name: str = "新会话"):
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     session_id   = request.session_id
-    user_message = request.message.strip()
-
-    if not user_message:
-        raise HTTPException(status_code=400, detail="message is required")
+    user_message = None
+    for msg in reversed(request.messages):
+        if msg.get("role") == "user":
+            user_message = msg.get("content", "").strip()
+            break
+            
+    if user_message is None:
+        return {"error": "没有找到用户消息"}
 
     sess = db().table("sessions").select("id").eq("id", session_id).limit(1).execute()
     if not sess.data:
