@@ -87,7 +87,7 @@ class IncomingMessage(BaseModel):
 
 class ChatRequest(BaseModel):
     messages: List[IncomingMessage]
-    # 🔑 session_id 设为 int，与 DB 一致；提供默认值
+    # session_id 设为 int，与 DB 一致；提供默认值
     session_id: Optional[int] = None
 
 class Segment(BaseModel):
