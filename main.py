@@ -41,9 +41,11 @@ def db() -> Client:
     return _supabase
 
 # ── Pydantic Schemas ──────────────────────────────────────────────────────────
+from typing import List, Dict
+
 class ChatRequest(BaseModel):
+    messages: List[Dict[str, str]]  # 注意是 messages，复数
     session_id: str = "default"
-    message: str
 
 # 【新增】一小段气泡的数据结构
 class Segment(BaseModel):
