@@ -39,7 +39,7 @@ app.add_middleware(
 
 # ── Env / Clients ─────────────────────────────────────────────────────────────
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-MODEL_ID           = os.getenv("MODEL_ID", "openai/gpt-4o-mini")
+MODEL_ID           = os.getenv("MODEL_ID", "openai/gpt-4o")
 SUPABASE_URL       = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY       = os.getenv("SUPABASE_KEY", "")
 
